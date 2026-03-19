@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle School Login and Signup</title>
+   <link rel="stylesheet" href="loginsignup.css">
+</head>
+<body>
+    <div class="white_card"> 
+        <!-- Header Section with Logo Image -->
+        <div class="header_part">
+            <img src="image/logo.jpg" alt="School Logo" class="school_logo">
+            <span class="name_1">EAGLE ENGLISH SCHOOL</span>
+            <span class="name_2">Education, Training and consultancy firm</span>
+        </div> 
+        <!-- Login part -->
+        <div id="login_form">
+            <h3 style="text-align: center; margin-bottom: 20px;">Welcome Back</h3>
+            <div class="input_box">
+                <label>Email Address</label>
+                <input type="email" id="log_email" placeholder="Enter your email address">
+            </div>
+            <div class="input_box">
+                <label>Password</label>
+                <input type="password" id="log_pass" placeholder="Enter your password">
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 15px;">
+                <label><input type="checkbox"> Remember me</label>
+                <span class="blue_link">Forgot Password?</span>
+            </div>
+            <button class="blue_button" onclick="login_now()">Login</button>
+            <div class="bottom_text">New here? <span class="blue_link" onclick="open_signup()">Sign Up</span></div>
+            <div class="divider"><span>OR</span></div>
+            <button class="google_button">Login with Google</button>
+        </div>
+        <!-- Signup part -->
+        <div id="signup_form" class="hide_me">
+            <h3 style="text-align: center; margin-bottom: 20px;">Create Account</h3>
+
+            <div class="input_box">
+                <label>Full Name</label>
+                <input type="text" id="sign_name" placeholder="Enter your full name">
+            </div>
+            <div class="input_box">
+                <label>Email Address</label>
+                <input type="email" id="sign_email" placeholder="Enter your email address">
+            </div>
+            <div class="input_box">
+                <label>Create Password</label>
+                <input type="password" id="sign_pass1" placeholder="••••••••" oninput="check_pass()">
+            </div>
+            <!-- Password Requirements -->
+            <div class="status_box">
+                <p style="margin-bottom: 5px; font-weight: bold;">Password rules:</p>
+                <div id="check1" class="rule_text"> 8 characters minimum</div>
+                <div id="check2" class="rule_text"> One capital letter (A-Z)</div>
+                <div id="check3" class="rule_text"> One small letter (a-z)</div>
+                <div id="check4" class="rule_text"> One number (0-9)</div>
+                <div id="check5" class="rule_text"> One special character (@, #, $)</div>
+            </div>
+            <div class="input_box">
+                <label>Confirm Password</label>
+                <input type="password" id="sign_pass2" placeholder="••••••••">
+            </div>
+            <button class="blue_button" onclick="signup_now()">Sign Up</button>
+            <div class="bottom_text">Have an account? <span class="blue_link" onclick="open_login()">Login</span></div>
+            <div class="divider"><span>OR</span></div>
+            <button class="google_button">Signup with Google</button>
+        </div>
+    </div>
+    <!--Java script part-->
+    <script>
+        // Store the input from the form in variables
+        var box1 = document.getElementById("login_form");
+        var box2 = document.getElementById("signup_form");
+        // Function to show the Signup form
+        function open_signup() {
+            box1.classList.add("hide_me");
+            box2.classList.remove("hide_me");
+        }
+        // Function to show the Login form
+        function open_login() {
+            box2.classList.add("hide_me");
+            box1.classList.remove("hide_me");
+        }
+        // This function checks the password as you type
+        function check_pass() {
+            var val = document.getElementById("sign_pass1").value;
+            // 1. Check length
+            if(val.length >= 8) { document.getElementById("check1").className = "rule_text is_green"; }
+            else { document.getElementById("check1").className = "rule_text"; }
+            // 2. Check for Capital letter
+            if(/[A-Z]/.test(val)) { document.getElementById("check2").className = "rule_text is_green"; }
+            else { document.getElementById("check2").className = "rule_text"; }
+            // 3. Check for Small letter
+            if(/[a-z]/.test(val)) { document.getElementById("check3").className = "rule_text is_green"; }
+            else { document.getElementById("check3").className = "rule_text"; }
+            // 4. Check for Number
+            if(/[0-9]/.test(val)) { document.getElementById("check4").className = "rule_text is_green"; }
+            else { document.getElementById("check4").className = "rule_text"; }
+            // 5. Check for Special character
+            if(/[!@#$%^&*]/.test(val)) { document.getElementById("check5").className = "rule_text is_green"; }
+            else { document.getElementById("check5").className = "rule_text"; }
+        }
+        // Function for the Signup button
+        function signup_now() {
+            var p1 = document.getElementById("sign_pass1").value;
+            var p2 = document.getElementById("sign_pass2").value;
+            if (p1 != p2) {
+                alert("Passwords do not match!");
+            }
+        }
+        // Function for the Login button
+    </script>
+</body>
+<!-- 
+   -------------------------------------------------------------------------------------------
+    yihenn refer adrgew it has all functions, classnames and variables declared with their use
+    ------------------------------------------------------------------------------------------
+   for css style
+    1.  .white_card      : The main white box in the center.
+    2.  .header_part     : Area for logo and school title.
+    3.  .school_logo     : Controls size and shape of the eagle image.
+    4.  .name_1          : Style for the bold school name.
+    5.  .name_2          : Style for the smaller grey name.
+    6.  .input_box       : Groups labels and input fields together.
+    7.  .status_box      : The grey box showing password rules.
+    8.  .rule_text       : Style for each individual password rule.
+    9.  .is_green        : Added by JavaScript to a rule when it is successfully met.
+    10. .blue_button     : Design for the main Login and Signup buttons.
+    11. .google_button   : Design for the white Google login button.
+    12. .bottom_text     : Centers the text links under the buttons.
+    13. .blue_link       : Blue underlined style for clickable text.
+    14. .hide_me         : to hide one form while showing the other.
+    for html part
+    1.  login_form       : The entire Login section.
+    2.  signup_form      : The entire Signup section.
+    3.  log_email / pass : Input fields on the Login page.
+    4.  sign_name / email: Input fields on the Signup page.
+    5.  sign_pass1       : The first password box (where rules are checked).
+    6.  sign_pass2       : The confirm password box.
+    7.  check1 to check5 : The IDs for each specific password rule text.
+    Javascript Variables:
+    1.  box1             : Represents the Login form container.
+    2.  box2             : Represents the Signup form container.
+    JAVASCRIPT functions:
+    1.  open_signup()    : Hides Login form and shows Signup form.
+    2.  open_login()     : Hides Signup form and shows Login form.
+    3.  check_pass()     : Runs every time you type. It checks the password against 5 rules.
+    4.  signup_now()     : Checks if both passwords match before creating the account.
+-->
+</html>

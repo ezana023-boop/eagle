@@ -1,0 +1,136 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            background-color: #1a56db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* The white part on login and signup page  */
+        .white_card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* --- Logo and School Name --- */
+        .header_part {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* Image Logo */
+        .school_logo {
+        width: 80px;
+        height: 80px; 
+        margin-bottom: 10px;
+        border-radius: 50%; 
+        object-fit: cover; 
+                     }
+        /* school name text*/
+        .name_1 {
+            color: #1a56db;
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: block;
+        }
+        /* school name text*/
+        .name_2 {
+            color: #666;
+            font-size: 0.75rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Input Fields */
+        .input_box {
+            margin-bottom: 15px;
+        }
+        .input_box label {
+            display: block;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .input_box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+        /* Password Rules */
+        .status_box {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        .rule_text {
+            color: #888;
+            margin-bottom: 3px;
+        }
+        /* when requirement is met for password it makes them green */
+        .is_green {
+            color: #059669;
+            font-weight: bold;
+        }
+        /* Buttons */
+        .blue_button {
+            width: 100%;
+            padding: 15px;
+            background: #1a56db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .google_button {
+            width: 100%;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* --- Navigation Links from login to signup or reverse */
+        .bottom_text {
+            text-align: center;
+            margin-top: 15px;  
+        }
+        .blue_link {
+            color: #1a56db;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .divider {
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            line-height: 0.1em;
+            margin: 25px 0;
+        }
+        .divider span { background: #fff; padding: 0 10px; color: #999; }
+         /* hide me only displays the login page first when user opens the website if user dont have an account they can click signup*/
+        .hide_me { display: none; }
+        /*  MOBILE RESPONSIVE  */
+        @media (max-width: 500px) {
+            .white_card { padding: 20px; }
+            .name_1 { font-size: 1.2rem; }
+        }

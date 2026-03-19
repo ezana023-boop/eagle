@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal | Eagle English School</title>
+    <link rel="stylesheet" href="adminportal.css">
+</head>
+<body>
+    <!-- 1. LOGIN SECTION -->
+    <div id="login_page">
+        <div class="login_card">
+            <img src="image/logo.jpg" alt="Logo" style="width: 50px; margin-bottom: 10px;">
+            <h2>Admin Login</h2>
+            <p style="font-size: 0.8rem; color: #666; margin-bottom: 20px;">Eagle English School Staff Only</p>
+            <input type="text" id="admin_user" class="input_box" placeholder="Admin Username"required>
+            <input type="password" id="admin_pass" class="input_box" placeholder="Password"required>
+            <button class="btn_login" onclick="do_login()">Enter Dashboard</button>
+        </div>
+    </div>
+    <!-- MAIN DASHBOARD SECTION -->
+    <div id="admin_dashboard">
+        <!-- SIDE NAVIGATION -->
+        <div class="side_bar">
+            <div class="side_logo">EAGLE ADMIN PANEL</div>
+            <div id="m1" class="nav_item nav_active" onclick="change_view('section_dash', 'm1')">Dashboard</div>
+            <div id="m2" class="nav_item" onclick="change_view('section_courses', 'm2')">Manage Courses</div>
+            <div id="m3" class="nav_item" onclick="change_view('section_msgs', 'm3')">Contact Messages</div>
+            <div style="margin-top: auto;">
+                <div class="nav_item" style="color: #d9534f;" onclick="location.reload()">Logout [X]</div>
+            </div>
+        </div>
+        <!-- CONTENT VIEW -->
+        <div class="main_view">
+            <!-- SECTION: OVERVIEW -->
+            <div id="section_dash" class="content_section section_active">
+                <h1>Welcome, Admin</h1>
+                <p>Overview of your school information portal.</p> 
+                <div class="stat_grid">
+                    <div class="stat_box"><b>0</b><br>Active Courses</div>
+                    <div class="stat_box"><b>0</b><br>Unread Messages</div>
+                </div>
+                <div class="white_card">
+                    <h3>Update Home Page News</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Change the "Latest News & Updates" text on the student homepage.</p>
+                    <textarea class="input_box" rows="4" placeholder="Enter new update text..."></textarea>
+                    <button class="btn_login" style="width: auto; padding: 10px 30px;">Publish Updates</button>
+                </div>
+            </div>
+            <!-- SECTION: MANAGE COURSES -->
+            <div id="section_courses" class="content_section">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1>Course Management</h1>
+                    <button class="btn_login" style="width: auto;">+ Add New Course</button>
+                </div>
+                <div class="white_card">
+                    <table>
+                        <thead>
+                            <tr><th>Course Name</th><th>Duration</th><th>Price</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>General English</td><td>12 Weeks</td><td>2500 ETB</td>
+                                <td><button class="action_btn">Edit</button><button class="action_btn btn_red">Del</button></td>
+                            </tr>
+                            <tr><td>Business English</td><td>10 Weeks</td><td>3500 ETB</td>
+                                <td><button class="action_btn">Edit</button><button class="action_btn btn_red">Del</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION: MESSAGES -->
+            <div id="section_msgs" class="content_section">
+                <h1>Contact Inquiries</h1>
+                <div class="white_card">
+                    <table>
+                        <thead>
+                            <tr><th>Date</th><th>Sender</th><th>Subject Preview</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mar 14</td><td>john@gmail.com</td><td>"Interested in IELTS..."</td>
+                                <td><button class="action_btn">Read</button><button class="action_btn btn_red">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!-- ADMIN FOOTER -->
+        <footer class="footer_black">
+            EAGLE ENGLISH SCHOOL | Education, Training and consultancy Firm
+        </footer>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Function to Login
+        function do_login() {
+            var user = document.getElementById("admin_user").value;
+            var pass = document.getElementById("admin_pass").value;
+            if (user == "admin" && pass == "1234") {
+                document.getElementById("login_page").style.display = "none";
+                document.getElementById("admin_dashboard").style.display = "flex";
+            } else {
+                alert("Wrong Admin Credentials!");
+            }
+        }
+        // 2. Function to switch Dashboard Sections
+        function change_view(sectionId, menuId) {
+            // Hide all sections
+            var sections = document.getElementsByClassName("content_section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("section_active");
+            }
+            // Remove active color from all menu buttons
+            var menus = document.getElementsByClassName("nav_item");
+            for (var j = 0; j < menus.length; j++) {
+                menus[j].classList.remove("nav_active");
+            }
+            // Show the one we clicked
+            document.getElementById(sectionId).classList.add("section_active");
+            document.getElementById(menuId).classList.add("nav_active");
+        }
+    </script>
+</body>
+<!-- 
+    -----------------------------------------------------------------------
+    refer this
+   ------------------------------------------------------------------------
+    CSS CLASS NAMES:
+    1.  .login_card    : The white box for the admin login screen.
+    2.  .side_bar      : The vertical navigation menu on the left side.
+    3.  .nav_item      : Styles for each menu button (Dashboard, Courses, etc).
+    4.  .main_view     : The large area on the right where content appears.
+    5.  .white_card    : Professional white boxes used to hold tables and forms.
+    6.  .stat_box      : Small boxes showing counts (Courses, Messages).
+    7.  .nav_active    : Makes the selected menu button blue.
+    8.  .footer_black  : The black bar at the bottom.
+    JAVASCRIPT VARIABLES & FUNCTIONS:
+    1.  do_login()     : Checks if user="admin" and pass="1234" to open portal.
+    2.  change_view()  : Switches between Dashboard, Courses, and Messages 
+                         without reloading the page.
+username for admin: admin         password for admin:1234
+   ---------------------------------------------------------------------------
+-->
+</html>

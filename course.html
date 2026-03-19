@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Eagle English School</title>
+    <link rel="stylesheet" href="course.css">
+</head>
+<body onload="start_page()">
+    <!-- NAVBAR -->
+    <nav class="top_bar">
+        <div class="logo_box">
+            <img src="image/logo.jpg" alt="Logo" class="img_logo">
+            <div>
+                <span class="name_1">EAGLE ENGLISH SCHOOL</span>
+                <span class="name_2">Education, Training & Consultancy</span>
+            </div>
+        </div>
+        <div class="links_box">
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="course.html">Courses</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="#" class="btn_out">Logout</a>
+        </div>
+    </nav>
+    <!-- BLUE HEADER -->
+    <div class="blue_box">
+        <h1 class="title_txt">Available Courses</h1>
+        <p class="slogan_txt">Professional language training with clear pricing and durations.</p>
+    </div>
+    <section class="white_part">
+        <!-- Search  -->
+        <div class="search_area">
+            <input type="text" placeholder="Search for a course...">
+        </div>
+        <!-- Course Cards appear here -->
+        <div id="list_box" class="grid_part">
+            <!-- card boxes are built with javascript from below -->
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="black_footer">
+        <div class="f_name">EAGLE ENGLISH SCHOOL</div>
+        <div class="f_firm">Education, Training and consultancy Firm</div>
+        <div class="f_addr">Abado, Gedera square, Bacha Mall, 2nd floor</div>
+        <div class="f_phone">📞 0968597300 / 0975838437 📱</div>
+    </footer>
+    <!-- JAVASCRIPT: used to build list of courses -->
+    <script>
+        // courses data. Admin can update this list later.
+        var all_courses = [
+            { name: "General English", duration: "12 Weeks", price: "2500 ETB" },
+            { name: "Business English", duration: "10 Weeks", price: "3500 ETB" },
+            { name: "IELTS Preparation", duration: "8 Weeks", price: "4000 ETB" },
+            { name: "Consultancy Training", duration: "4 Weeks", price: "5000 ETB" },
+            { name: "Spoken English", duration: "6 Weeks", price: "2000 ETB" },
+            { name: "Intensive Grammar", duration: "4 Weeks", price: "1500 ETB" }
+        ];
+        // Function to build the UI of the course
+        function start_page() {
+            var box = document.getElementById("list_box");
+            var final_html = "";
+            for (var i = 0; i < all_courses.length; i++) {
+                final_html += `
+                    <div class="card_box">
+                        <div class="circle_icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <h3>${all_courses[i].name}</h3>
+                        <p class="info_txt">Duration: ${all_courses[i].duration}</p>
+                        <span class="price_txt">${all_courses[i].price}</span>
+                    </div>
+                `;
+            }
+            box.innerHTML = final_html;
+        }
+    </script>
+</body>
+<!-- 
+  --------------------------------------------------------------------------
+    Refer this
+  --------------------------------------------------------------------------
+    CSS CLASS NAMES
+    1.  .top_bar     : The white bar at the top (Menu).
+    2.  .logo_box    : Aligns logo image and school name on the left.
+    3.  .links_box   : Aligns menu links on the right.
+    4.  .blue_box    : The blue section at the top of the page.
+    5.  .white_part  : The main area where courses are displayed.
+    6.  .search_area : Styles the search input box.
+    7.  .grid_part   : The system that puts cards side-by-side.
+    8.  .card_box    : The white box for an individual course.
+    9. .price_txt   : Bold blue text used to show the price.
+    10. .black_footer: The specific solid black area at the bottom.
+    JAVASCRIPT VARIABLES & FUNCTIONS:
+    1.  all_courses  : A list (Array) containing Name, Duration, and Price.
+    2.  start_page() : Function that runs when page loads to create the cards.
+    =======================================================================
+-->
+</html>

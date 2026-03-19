@@ -1,0 +1,309 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Navigation bar */
+        .top_bar {
+            background: #ffffff;
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .logo_box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .img_logo { width: 45px; }
+        .name_1 {
+            color: #1a56db; 
+            font-size: 1.25rem;
+            font-weight: 800;
+            display: block;
+        }
+        .name_2 {
+            color: #6b7280;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .links_box {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+        .links_box a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .links_box a:hover { color: #1a56db; }
+        .btn_out {
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        /* BLUE HEADER SECTION */
+        .blue_box {
+            background-color: #1a56db;
+            color: white;
+            text-align: center;
+            padding: 80px 5%;
+        }
+        .title_txt { 
+            font-size: 2.8rem; 
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .slogan_txt {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* COURSE SECTION */
+        .white_part {
+            padding: 60px 10%;
+            min-height: 500px;
+        }
+        /* Search input */
+        .search_area {
+            max-width: 500px;
+            margin: 0 auto 50px;
+        }
+        .search_area input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+            font-size: 1rem;
+        }
+        .search_area input:focus { border-color: #1a56db; }
+        /* Course cards */
+        .grid_part {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card_box {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            border: 1px solid #eef2f6;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .card_box:hover {
+            transform: translateY(-10px);
+            border-color: #1a56db;
+            box-shadow: 0 10px 30px rgba(26, 86, 219, 0.1);
+        }
+        /* Course Icon Circle */
+        .circle_icon {
+            width: 60px;
+            height: 60px;
+            background: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .card_box h3 {
+            color: #1a56db;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .info_txt {
+            color: #6b7280;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .price_txt {
+            font-size: 1.5rem;
+            color: #1a56db;
+            font-weight: 800;
+            margin-top: 15px;
+            display: block;
+        }
+        /*  FOOTER */
+        .black_footer {
+            background: #000000;
+            color: white;
+            padding: 60px 5%;
+            text-align: center;
+        }
+        .f_name { font-size: 1.8rem; font-weight: bold; margin-bottom: 5px; }
+        .f_firm { font-size: 1rem; margin-bottom: 25px; }
+        .f_addr { font-size: 1.1rem; margin-bottom: 15px; }
+        .f_phone { font-size: 1.2rem; font-weight: bold; }
+        /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+    .top_bar {
+        height: auto;
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        gap: 8px;
+    }
+    .logo_box {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+    .img_logo { width: 32px; }
+    .name_1 { font-size: 0.95rem; letter-spacing: 0.5px; }
+    .name_2 { font-size: 0.55rem; }
+    .links_box {
+        width: 100vw;
+        padding: 5px 15px 10px;
+        margin-left: 0;
+        overflow-x: auto;
+        justify-content: flex-start;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .links_box a {
+        background: #ffffff;
+        border: 1.5px solid #eef2f6;
+        padding: 6px 14px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: #1e293b;
+        white-space: nowrap;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .links_box a[href="course.html"] {
+        background: #1a56db;
+        color: white;
+        border-color: #1a56db;
+    }
+    .blue_box {
+        padding: 50px 20px 80px;
+        background: linear-gradient(160deg, #1a56db 0%, #0035a8 100%);
+        clip-path: ellipse(150% 100% at 50% 0%); 
+    }
+    .title_txt {
+        font-size: 1.85rem;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    .slogan_txt {
+        font-size: 0.9rem;
+        opacity: 0.85;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    .white_part {
+        padding: 0 16px 40px;
+        margin-top: -35px;
+    }
+    .search_area {
+        margin-bottom: 25px;
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    }
+    .search_area input {
+        border: none;
+        height: 52px;
+        border-radius: 14px;
+        padding: 0 20px;
+        font-size: 0.95rem;
+        background: #ffffff;
+        margin-top: 40px;
+    }
+    .grid_part {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .card_box {
+        display: flex; 
+        text-align: left;
+        padding: 16px;
+        gap: 16px;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid #f1f5f9;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s ease;
+    }
+    .card_box:active {
+        transform: scale(0.97);
+        background: #f8fafc;
+    }
+    .circle_icon {
+        flex-shrink: 0;
+        width: 54px;
+        height: 54px;
+        margin: 0;
+        background: #eff6ff;
+        border-radius: 14px;
+    }
+    .circle_icon svg {
+        width: 26px;
+        height: 26px;
+    }
+    .card_box h3 {
+        font-size: 1.05rem;
+        margin-bottom: 2px;
+        color: #0f172a;
+        font-weight: 700;
+    }
+    .info_txt {
+        font-size: 0.8rem;
+        color: #64748b;
+        margin: 0;
+    }
+    .price_txt {
+        margin-top: 6px;
+        font-size: 1.1rem;
+        color: #1a56db;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .black_footer {
+        padding: 50px 20px;
+        background: #0f172a;
+        border-radius: 30px 30px 0 0;
+    }
+    .f_name { font-size: 1.25rem; letter-spacing: 1px; }
+    .f_firm { font-size: 0.8rem; color: #94a3b8; }
+    .f_addr { font-size: 0.85rem; color: #cbd5e1; border-top: 1px solid #1e293b; padding-top: 15px; }
+    .f_phone { 
+        font-size: 0.9rem;
+        margin-top: 20px;
+        color: #ffffff;
+        background: #1e293b;
+        padding: 15px;
+        border-radius: 12px;
+        display: inline-block;
+        width: 100%;
+    }
+}

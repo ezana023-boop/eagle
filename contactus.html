@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Eagle English School</title>
+    <link rel="stylesheet" href="contactus.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="top_bar">
+        <div class="logo_box">
+            <img src="image/logo.jpg" alt="Logo" class="img_logo">
+            <div>
+                <span class="name_1">EAGLE ENGLISH SCHOOL</span>
+                <span class="name_2">Education, Training & Consultancy</span>
+            </div>
+        </div>
+        <div class="menu_links">
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="course.html">Courses</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="#" class="btn_out">Logout</a>
+        </div>
+    </nav>
+    <!-- BLUE HEADER -->
+    <div class="blue_part">
+        <h1 class="title_txt">Contact Us</h1>
+        <p class="slogan_txt">We are here to answer your questions and provide professional guidance.</p>
+    </div>
+    <!-- MAIN CONTACT CONTENT -->
+    <section class="white_part"> 
+        <!-- LEFT: THE FORM -->
+        <div class="form_box">
+            <h2>Send a Message</h2>
+            <div class="input_group">
+                <label>Full Name</label>
+                <input type="text" id="user_name" placeholder="Enter your name">
+            </div>
+            <div class="input_group">
+                <label>Email Address</label>
+                <input type="email" id="user_email" placeholder="email@example.com">
+            </div>
+            <div class="input_group">
+                <label>How can we help?</label>
+                <textarea id="user_msg" rows="5" placeholder="Type your message here..."></textarea>
+            </div>
+            <button class="btn_send" onclick="send_click()">Send Message</button>
+        </div>
+        <!-- RIGHT: CONTACT INFO -->
+        <div class="info_box">
+            <h2>Get In Touch</h2>
+            <div class="contact_item">
+                <div class="icon_circle">📍</div>
+                <div class="item_txt">
+                    <b>Our Location</b>
+                    Abado, Gedera square, Bacha Mall, 2nd floor
+                </div>
+            </div>
+            <div class="contact_item">
+                <div class="icon_circle">📞</div>
+                <div class="item_txt">
+                    <b>Phone Numbers</b>
+                    0968597300 / 0975838437
+                </div>
+            </div>
+            <div class="contact_item">
+                <div class="icon_circle">✉️</div>
+                <div class="item_txt">
+                    <b>Official Email</b>
+                    eagle@gmail.com
+                </div>
+            </div>
+            <!-- MAP AREA -->
+            <div class="map_area">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.1278144618258!2d38.87190502396113!3d9.059298418043644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b91d848080007%3A0x4a7e8cfc940d1dad!2sBacha%20Mall%20Abado!5e0!3m2!1sen!2set!4v1710156000000!5m2!1sen!2set" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="black_footer">
+        <div class="f_name">EAGLE ENGLISH SCHOOL</div>
+        <div class="f_firm">Education, Training and consultancy Firm</div>
+        <div class="f_addr">Abado, Gedera square, Bacha Mall, 2nd floor</div>
+        <div class="f_phone">📞 0968597300 / 0975838437 📱</div>
+    </footer>
+    <!-- JAVASCRIPT -->
+    <script>
+        // Function that runs when user clicks the Send button
+        function send_click() {
+            var name = document.getElementById("user_name").value;
+        
+            if (name == "") {
+                alert("Please enter your name first!");
+            } else {
+                alert("Thank you " + name + "! Your message has been sent to the Admin.");
+            }
+        }
+    </script>
+</body>
+<!-- 
+    ----------------------------------------------------------------------
+    DOCUMENTATION: CODE EXPLANATION (FOR BEGINNERS)
+    ----------------------------------------------------------------------
+    CSS CLASS NAMES:
+    1.  .top_bar     : The white menu strip at the top.
+    2.  .logo_box    : Aligns the eagle logo and school name on the far left.
+    3.  .menu_links  : Aligns the page links (Home, About, etc) on the far right.
+    4.  .blue_part   : The large blue section with the page title.
+    5.  .slogan_txt  : The white text directly under the "Contact Us" title.
+    6.  .white_part  : The main area containing the form and the info box.
+    7.  .form_box    : The white card on the left where users type messages.
+    8.  .input_group : Styles labels and input boxes for a clean look.
+    9.  .btn_send    : The large blue button to submit the form.
+    10. .info_box    : The area on the right with address and phone numbers.
+    11. .icon_circle : The small light-blue circles holding emojis like 📞 or 📍.
+    12. .map_area    : The container used to show the Google Map.
+    13. .black_footer: The black area at the very bottom.
+    JAVASCRIPT VARIABLES & FUNCTIONS:
+    1.  send_click() : A function that shows an alert box when the 
+                       user finishes typing their message.
+   ------------------------------------------------------------------------------
+-->
+</html>```
